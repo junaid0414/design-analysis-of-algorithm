@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char string1[20];
+    int i, length;
+    int flag = 0;
+    int count=0;
+    printf("Enter a string:");
+    scanf("%s", string1);
+    length = strlen(string1);
+    count++;
+    for(i=0;i < length ;i++){
+    	count++;
+        if(string1[i] != string1[length-i-1]){
+            flag = 1;
+            break;
+            count++;
+           }
+           count++;
+        }
+        count++;
+     if (flag) {
+        printf("%s is not a palindrome ", string1);
+    }    
+    else {
+        printf("%s is a palindrome ", string1);
+    }
+        printf("time complexity : %d",count);
+    return 0;
+}
