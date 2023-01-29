@@ -1,0 +1,24 @@
+#include <stdio.h>
+int count=0;
+int bin_table(int val) {
+   for (int i = 0; i <= val; i++) {
+   	  count++;
+      printf("%2d", i);
+      int num = 1;
+      for (int j = 0; j <= i; j++) {
+      	 count++;
+         if (i != 0 && j != 0)
+         num = num * (i - j + 1) / j;
+         count++;
+         printf("%4d", num);
+      }
+      printf("\n");
+      count++;
+   }
+}
+int main() {
+   int value = 5;
+   bin_table(value);
+   printf("%d",count);
+   return 0;
+}
