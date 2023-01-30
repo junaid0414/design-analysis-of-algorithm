@@ -1,0 +1,36 @@
+#include <stdio.h>
+int count=0;
+int max(int a, int b)
+{
+count++;
+ return (a > b) ? a : b;
+}
+int knapSack(int W, int wt[], int val[], int n)
+{
+count++;
+	if (n == 0 || W == 0)
+		return 0;
+		count++;
+	if (wt[n - 1] > W)
+		return knapSack(W, wt, val, n - 1);
+	else
+		return max(
+			val[n - 1]
+				+ knapSack(W - wt[n - 1], wt, val, n - 1),
+			knapSack(W, wt, val, n - 1));
+			count++;
+}
+int main()
+{
+	int val[] = { 60, 100, 120 };
+	count++;
+	int wt[] = { 10, 20, 30 };
+	count++;
+	int W = 50;
+	count++;
+	int n = sizeof(val) / sizeof(val[0]);
+	count++;
+	printf("%d", knapSack(W, wt, val, n));
+	printf("\ncount=%d",count);
+	return 0;
+}
